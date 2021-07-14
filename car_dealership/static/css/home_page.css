@@ -1,0 +1,121 @@
+.bg-nav{
+  background-color: black;
+}
+
+body{
+  background-image: url("../images/bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.form-select{
+  padding: 5px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: purple;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(35,43,43,0.7);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer h4{
+  font-size: 15px;
+  padding: 5px 20px;
+  border: 3px solid white;
+  margin: 10px 20px;
+  border-radius: 5px;
+}
+
+.footer a{
+  text-decoration: none;
+  color: white;
+}
+
+.carCards{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card{
+  margin:20px;
+}
+
+.pad{
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.map-responsive{
+
+    overflow:hidden;
+
+    padding-bottom:56.25%;
+
+    position:relative;
+
+    height:0;
+
+}
+
+.map-responsive iframe{
+
+    left:0;
+
+    top:0;
+
+    height:100%;
+
+    width:100%;
+
+    position:absolute;
+
+}

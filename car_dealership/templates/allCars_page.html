@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% block title %}
+<title>Drive Motors | Home</title>
+{% endblock %}
+{% block body_block %}
+{% if cars %}
+<div class="carCards">
+{% for car in cars %}
+  <div class="card" style="width: 18rem;">
+    <img src= "{{car.image_one.url}}" class="card-img-top" alt="Card Image Cap">
+    <div class="card-body">
+      <h5 class="card-title">{{car.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{car.price|price}}</li>
+      <li class="list-group-item">{{car.color}}</li>
+      <li class="list-group-item">{{car.kilometers|km}}</li>
+    </ul>
+    <div class="card-body">
+      <form action="../car/" method="post" name="car">{% csrf_token %}
+        <input type="hidden" name="car_name" value="{{car.name}}">
+        <button type="submit" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          View More Details
+        </button>
+      </form>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% else %}
+  <h1>sorry no cars available</h1>
+{% endif %}
+{% endblock %}
